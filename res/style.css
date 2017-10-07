@@ -1,16 +1,60 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
+
+@font-face
+{
+	font-family: navtext;
+	src: url("HelveticaNeueCyr-Light.otf");
+}
 
 /*
  * Общий вид и размеры HTML
  */
-html, body
+html
+{
+    
+	background: linear-gradient(135grad, RGBA(127,255,127,0.1) 0%, RGBA(63,127,63,0.15) 25%, RGBA(127,255,127,0.2) 50%, RGBA(63,127,63,0.15) 75%, RGBA(127,255,127,0.1) 100%);
+    background-image:url("background.jpg");
+	height: 100vh;
+	width: 100vw;
+}
+
+@media(min-height: 768px)
+{
+	html
+	{
+		background-size: auto 100%;
+	}
+}
+
+@media(min-width: 1500px)
+{
+	html
+	{
+		background-size: 100% 100%;
+	}
+}
+
+body
 {
 	margin: auto;
 	padding: 0;
 	width: 1024px;
 	height: 600px;
-	position: relative;
+	position: absolute;
+	top:0;
+	bottom:0;
+	left: 0;
+	right:0;
 	overflow: hidden;
+	transform: rotate(0);
+}
+
+@media(min-width: 1600px)
+{
+	body
+	{
+		transform: scale(1.5);
+	}
 }
 
 /*
@@ -18,7 +62,7 @@ html, body
  */
 body > img
 {
-	height: 150px;
+	height: 158px;
 	width: 200px;
 	position: absolute;
 	margin: auto;
@@ -26,15 +70,18 @@ body > img
 	right: 0;
 	top: 0;
 	bottom: 0;
-	padding: 20px;
-	transition: 0.5s all;
+	padding: 25px;
+	transition: .9s all;
+	background: white;
+	border-radius: 15px;
+	border: 1px solid blue;
 }
 
 body > img:hover
 {
 	height: 190px;
 	width: 240px;
-	padding: 0;
+	padding: 9px 5px;
 }
 
 
@@ -54,7 +101,7 @@ body > div > a
 	height: 100px;
 	display: block;
 	position: relative;
-	opacity: 0.6;
+	opacity: 0.3;
 	transition: 1s opacity;
 }
 
@@ -100,6 +147,12 @@ body > div:nth-child(2)
 	top: 15%;
 	left: 17%;
 }
+body > div:nth-child(5)
+{
+	top: 15%;
+	right: 17%;
+}
+
 body > div:nth-child(3)
 {
 	top: 0;
@@ -107,22 +160,18 @@ body > div:nth-child(3)
 	left: 15%;
 	margin: auto 0;
 }
-body > div:nth-child(4)
-{
-	bottom: 15%;
-	left: 17%;
-}
-body > div:nth-child(5)
-{
-	top: 15%;
-	right: 17%;
-}
 body > div:nth-child(6)
 {
 	top: 0;
 	bottom: 0;
 	right: 15%;
 	margin: auto 0;
+}
+
+body > div:nth-child(4)
+{
+	bottom: 15%;
+	left: 17%;
 }
 body > div:nth-child(7)
 {
@@ -151,11 +200,11 @@ body > div > a::after
 {
 	content: '';
 	position: absolute;
-	width: 2px;
+	width: 1.5px;
 	height: 10px;
-	background-color: green;
+	background-color: RGBA(0,101,228,0.8);
 	opacity: 0;
-	transition: 0.6s opacity, 0.9s height, 0.9s margin;
+	transition: 0.8s all;
 }
 
 /*
@@ -168,7 +217,7 @@ body > div:nth-child(2) > a::after
 	bottom: 0;
 	right: 0;
 	margin-bottom: -12%;
-	margin-right: -43%;
+	margin-right: -41%;
 }
 body > div:nth-child(5) > a::after
 {
@@ -176,7 +225,7 @@ body > div:nth-child(5) > a::after
 	bottom: 0;
 	left: 0;
 	margin-bottom: -12%;
-	margin-left: -43%;
+	margin-left: -41%;
 }
 
 body > div:nth-child(3) > a::after
@@ -186,7 +235,7 @@ body > div:nth-child(3) > a::after
 	bottom: 0;
 	margin: auto;
 	right: 0;
-	margin-right: -56%;
+	margin-right: -50%;
 }
 body > div:nth-child(6) > a::after
 {
@@ -195,7 +244,7 @@ body > div:nth-child(6) > a::after
 	bottom: 0;
 	margin: auto;
 	left: 0;
-	margin-left: -56%;
+	margin-left: -50%;
 }
 
 
@@ -205,7 +254,7 @@ body > div:nth-child(4) > a::after
 	top: 0;
 	right: 0;
 	margin-top: -12%;
-	margin-right: -43%;
+	margin-right: -41%;
 }
 body > div:nth-child(7) > a::after
 {
@@ -213,7 +262,7 @@ body > div:nth-child(7) > a::after
 	top: 0;
 	left: 0;
 	margin-top: -12%;
-	margin-left: -43%;
+	margin-left: -41%;
 }
 
 /*
@@ -225,7 +274,7 @@ body > img:hover + div + div + div > a::after,
 body > img:hover + div + div + div + div > a::after,
 body > img:hover + div + div + div + div + div + div > a::after
 {
-	height: 70px;
+	height: 50px;
 	opacity: 1;
 }
 
@@ -237,7 +286,7 @@ body > div:nth-child(2):hover > a::after
 {
 	bottom: 0;
 	right: 0;
-	margin-bottom: -42px;
+	margin-bottom: -32px;
 	margin-right: -35px;
 }
 body > img:hover + div + div + div + div > a::after,
@@ -245,32 +294,32 @@ body > div:nth-child(5):hover > a::after
 {
 	bottom: 0;
 	left: 0;
-	margin-bottom: -42px;
+	margin-bottom: -32px;
 	margin-left: -35px;
 }
 
-body > img:hover + div + div > a::after,
-body > div:nth-child(3):hover > a::after
+body > div:nth-child(3):hover > a::after,
+body > img:hover + div + div > a::after
 {
 	margin-right: -30%;
-	height: 90px;
-	opacity: 1;
-}
-body > img:hover + div + div + div + div + div > a::after,
-body > div:nth-child(6):hover > a::after
-{
-	margin-left: -30%;
-	height: 90px;
+	height: 70px;
 	opacity: 1;
 }
 
+body > div:nth-child(6):hover > a::after,
+body > img:hover + div + div + div + div + div > a::after
+{
+	margin-left: -30%;
+	height: 70px;
+	opacity: 1;
+}
 
 body > img:hover + div + div + div > a::after,
 body > div:nth-child(4):hover > a::after
 {
 	top: 0;
 	right: 0;
-	margin-top: -42px;
+	margin-top: -32px;
 	margin-right: -35px;
 }
 body > img:hover + div + div + div + div + div + div > a::after,
@@ -278,7 +327,7 @@ body > div:nth-child(7):hover > a::after
 {
 	top: 0;
 	left: 0;
-	margin-top: -42px;
+	margin-top: -32px;
 	margin-left: -35px;
 }
 
@@ -297,7 +346,7 @@ body > div > a > div
 	top: 0;
 	max-height:0;
 	overflow-y: hidden;
-	transition: .7s max-height linear; 
+	transition: .7s max-height cubic-bezier(0.3, 0, 0.5, 1); 
 }
 body > div:nth-child(n+5) > a > div
 {
@@ -333,6 +382,7 @@ body > div > a:hover > div
 /*
  * Пункты подменю
  */
+
 body > div > a > div > a
 {
 	display: block;
@@ -340,6 +390,16 @@ body > div > a > div > a
 	color: black;
 	padding: 10px;
 	border-top: 1px solid;
+	background: white;
+	font-family: navtext;
+}
+
+/*
+ * Активация пункта подменю
+ */
+body > div > a > div > a:hover
+{
+	background: orange;
 }
 
 /*
@@ -354,11 +414,19 @@ body > aside
 	width: 200px;
 	text-align: center;
 	bottom: 0;
-	padding-top: 10px;
+	border-radius: 15px;
 	z-index: -100;
 	overflow-y: hidden;
 	max-height: 0;
 	transition: .9s max-height linear;
+	font-family: navtext;
+	background: white;
+}
+
+body > aside > *
+{
+	-webkit-margin-before: 0.25em;
+	-webkit-margin-after: 0.25em;
 }
 
 /*
