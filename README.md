@@ -1,2 +1,2 @@
-# old-TomTiT
-Old TomTIT site
+# Old version of TomTIT site
+This repo is represent site development history
