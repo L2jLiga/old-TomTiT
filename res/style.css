@@ -1,9 +1,16 @@
 @charset "UTF-8";
 
+/*
+ * Основной шрифт главной страницы
+ */
 @font-face
 {
 	font-family: navtext;
-	src: url("HelveticaNeueCyr-Light.otf");
+	src: local("HelveticaNeueCyr"),
+	url("HelveticaNeueCyr-Light.woff2") format("woff2"),
+	url("HelveticaNeueCyr-Light.woff") format("woff"),
+	url("HelveticaNeueCyr-Light.ttf") format("ttf"),
+	url("HelveticaNeueCyr-Light.otf") format("opentype");
 }
 
 /*
@@ -11,9 +18,7 @@
  */
 html
 {
-    
-	background: linear-gradient(135grad, RGBA(127,255,127,0.1) 0%, RGBA(63,127,63,0.15) 25%, RGBA(127,255,127,0.2) 50%, RGBA(63,127,63,0.15) 75%, RGBA(127,255,127,0.1) 100%);
-    background-image:url("background.jpg");
+	background-image:url("background.jpg");
 	height: 100vh;
 	width: 100vw;
 }
@@ -46,7 +51,6 @@ body
 	left: 0;
 	right:0;
 	overflow: hidden;
-	transform: rotate(0);
 }
 
 @media(min-width: 1600px)
@@ -62,7 +66,6 @@ body
  */
 body > img
 {
-	height: 158px;
 	width: 200px;
 	position: absolute;
 	margin: auto;
@@ -79,9 +82,8 @@ body > img
 
 body > img:hover
 {
-	height: 190px;
 	width: 240px;
-	padding: 9px 5px;
+	padding: 9px 5px 10px 5px;
 }
 
 
@@ -103,6 +105,69 @@ body > div > a
 	position: relative;
 	opacity: 0.3;
 	transition: 1s opacity;
+}
+
+/*
+ * Картинки для кнопочек
+ */
+
+body > div > a
+{
+	background-size: 100px 100px;
+	background-repeat: no-repeat;
+}
+
+body > div > a > img
+{
+	padding: 5px;
+	width: 90px;
+	height: 90px;
+	opacity: 0;
+	transition: 0.7s opacity linear;
+	background-color: white;
+	border-radius: 15px;
+}
+
+body > div:nth-child(2) > a
+{
+	text-align: right;
+	background-position: 100%;
+	background-image: url("../icon/1.png");
+}
+body > div:nth-child(3) > a
+{
+	text-align: right;
+	background-position: 100%;
+	background-image: url("../icon/2.png");
+}
+body > div:nth-child(4) > a
+{
+	text-align: right;
+	background-position: 100%;
+	background-image: url("../icon/3.png");
+}
+body > div:nth-child(5) > a
+{
+	background-image: url("../icon/4.png");
+}
+body > div:nth-child(6) > a
+{
+	background-image: url("../icon/5.png");
+}
+body > div:nth-child(7) > a
+{
+	background-image: url("../icon/6.png");
+}
+
+body > div:hover > a > img,
+body > img:hover + div > a > img,
+body > img:hover + div + div > a > img,
+body > img:hover + div + div + div > a > img,
+body > img:hover + div + div + div + div > a > img,
+body > img:hover + div + div + div + div + div > a > img,
+body > img:hover + div + div + div + div + div + div > a > img
+{
+	opacity:1;
 }
 
 /*
@@ -204,7 +269,7 @@ body > div > a::after
 	height: 10px;
 	background-color: RGBA(0,101,228,0.8);
 	opacity: 0;
-	transition: 0.8s all;
+	transition: 0.5s opacity, 0.8s all;
 }
 
 /*
@@ -233,18 +298,16 @@ body > div:nth-child(3) > a::after
 	transform:rotate(100grad);
 	top: 0;
 	bottom: 0;
-	margin: auto;
+	margin: auto -50% auto auto;
 	right: 0;
-	margin-right: -50%;
 }
 body > div:nth-child(6) > a::after
 {
 	transform:rotate(100grad);
 	top: 0;
 	bottom: 0;
-	margin: auto;
+	margin: auto auto auto -50%;
 	left: 0;
-	margin-left: -50%;
 }
 
 
@@ -425,14 +488,16 @@ body > aside
 
 body > aside > *
 {
-	-webkit-margin-before: 0.25em;
-	-webkit-margin-after: 0.25em;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	margin: 0.25em 0;
 }
 
 /*
  * Выпадание пунктов меню при наведение
  */
-body > img:hover + div + div + div + div + div+ div + aside
+body > img:hover + div + div + div + div + div+ div + aside,
+body > aside:hover
 {
 	max-height: 300px;
 }
