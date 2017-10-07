@@ -1,0 +1,283 @@
+﻿@charset "UTF-8";
+
+/*
+ * Общий вид и размеры HTML
+ */
+html, body
+{
+	margin: auto;
+	padding: 0;
+	width: 1024px;
+	height: 600px;
+	position: relative;
+	overflow: hidden;
+}
+
+/*
+ * Внешний вид логотипа по центру + анимация увеличения
+ */
+body > img
+{
+	height: 150px;
+	width: 200px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding: 20px;
+	transition: 0.5s all;
+}
+
+body > img:hover
+{
+	height: 190px;
+	width: 240px;
+	padding: 0;
+}
+
+
+/*
+ * Общий вид остальных кнопочек
+ */
+body > div
+{
+	position: absolute;
+	width: 150px;
+	height: 100px;
+}
+
+body > div > a
+{
+	width: 150px;
+	height: 100px;
+	display: block;
+	position: relative;
+	opacity: 0.6;
+	transition: 1s opacity;
+}
+
+/*
+ * Активные зоны для отдельных элементов
+ */
+body > div:nth-child(2)
+{
+	padding-right: 68px;
+	padding-bottom: 50px;
+}
+body > div:nth-child(5)
+{
+	padding-left: 68px;
+	padding-bottom: 50px;
+}
+
+body > div:nth-child(3)
+{
+	padding: 10px 88px 10px 0;
+}
+body > div:nth-child(6)
+{
+	padding: 10px 0 10px 88px;
+}
+
+body > div:nth-child(4)
+{
+	padding-right: 68px;
+	padding-top: 50px;
+}
+body > div:nth-child(7)
+{
+	padding-left: 68px;
+	padding-top: 50px;
+}
+
+/*
+ * Положение кнопочек в неактивном режиме
+ */
+body > div:nth-child(2)
+{
+	top: 15%;
+	left: 17%;
+}
+body > div:nth-child(3)
+{
+	top: 0;
+	bottom: 0;
+	left: 15%;
+	margin: auto 0;
+}
+body > div:nth-child(4)
+{
+	bottom: 15%;
+	left: 17%;
+}
+body > div:nth-child(5)
+{
+	top: 15%;
+	right: 17%;
+}
+body > div:nth-child(6)
+{
+	top: 0;
+	bottom: 0;
+	right: 15%;
+	margin: auto 0;
+}
+body > div:nth-child(7)
+{
+	bottom: 15%;
+	right: 17%;
+}
+
+/*
+ * При активации кнопочек
+ */
+body > div:hover > a,
+body > img:hover + div > a,
+body > img:hover + div + div > a,
+body > img:hover + div + div + div > a,
+body > img:hover + div + div + div + div > a,
+body > img:hover + div + div + div + div + div > a,
+body > img:hover + div + div + div + div + div + div > a
+{
+	opacity: 1;
+}
+
+/*
+ * Общие настройки линий
+ */
+body > div > a::after
+{
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 10px;
+	background-color: green;
+	opacity: 0;
+	transition: 0.6s opacity, 0.9s height, 0.9s margin;
+}
+
+/*
+ * Поворот и положение линий
+ */
+
+body > div:nth-child(2) > a::after
+{
+	transform: rotate(-83grad);
+	bottom: 0;
+	right: 0;
+	margin-bottom: -12%;
+	margin-right: -43%;
+}
+body > div:nth-child(5) > a::after
+{
+	transform: rotate(83grad);
+	bottom: 0;
+	left: 0;
+	margin-bottom: -12%;
+	margin-left: -43%;
+}
+
+body > div:nth-child(3) > a::after
+{
+	transform:rotate(100grad);
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	right: 0;
+	margin-right: -56%;
+}
+body > div:nth-child(6) > a::after
+{
+	transform:rotate(100grad);
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	left: 0;
+	margin-left: -56%;
+}
+
+
+body > div:nth-child(4) > a::after
+{
+	transform: rotate(83grad);
+	top: 0;
+	right: 0;
+	margin-top: -12%;
+	margin-right: -43%;
+}
+body > div:nth-child(7) > a::after
+{
+	transform: rotate(-83grad);
+	top: 0;
+	left: 0;
+	margin-top: -12%;
+	margin-left: -43%;
+}
+
+/*
+ * Общие настройки для линий при наведение
+ */
+body > div:hover > a::after,
+body > img:hover + div > a::after,
+body > img:hover + div + div + div > a::after,
+body > img:hover + div + div + div + div > a::after,
+body > img:hover + div + div + div + div + div + div > a::after
+{
+	height: 70px;
+	opacity: 1;
+}
+
+/*
+ * Частные настройки линий при наведение
+ */
+body > img:hover + div > a::after,
+body > div:nth-child(2):hover > a::after
+{
+	bottom: 0;
+	right: 0;
+	margin-bottom: -42px;
+	margin-right: -35px;
+}
+body > img:hover + div + div + div + div > a::after,
+body > div:nth-child(5):hover > a::after
+{
+	bottom: 0;
+	left: 0;
+	margin-bottom: -42px;
+	margin-left: -35px;
+}
+
+body > img:hover + div + div > a::after,
+body > div:nth-child(3):hover > a::after
+{
+	margin-right: -30%;
+	height: 90px;
+	opacity: 1;
+}
+body > img:hover + div + div + div + div + div > a::after,
+body > div:nth-child(6):hover > a::after
+{
+	margin-left: -30%;
+	height: 90px;
+	opacity: 1;
+}
+
+
+body > img:hover + div + div + div > a::after,
+body > div:nth-child(4):hover > a::after
+{
+	top: 0;
+	right: 0;
+	margin-top: -42px;
+	margin-right: -35px;
+}
+body > img:hover + div + div + div + div + div + div > a::after,
+body > div:nth-child(7):hover > a::after
+{
+	top: 0;
+	left: 0;
+	margin-top: -42px;
+	margin-left: -35px;
+}
