@@ -1,4 +1,7 @@
 
+main-page-3-rc6:
++ Added headers for popup menu
+
 main-page-3-rc5:
 + Compress images
 

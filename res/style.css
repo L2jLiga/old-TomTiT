@@ -16,7 +16,7 @@
 }
 
 /*
- * Общий вид и размеры HTML
+ * Накладываем общий фон
  */
 html
 {
@@ -41,9 +41,11 @@ html
 	}
 }
 
+/*
+ * Контейнер с пунктами меню
+ */
 body
 {
-	margin: auto;
 	padding: 0;
 	width: 1024px;
 	height: 600px;
@@ -52,7 +54,16 @@ body
 	bottom:0;
 	left: 0;
 	right:0;
+	margin: auto;
 	overflow: hidden;
+}
+
+@media (max-width: 1080px)
+{
+	body
+	{
+		transform: scale(0.8);
+	}
 }
 
 @media(min-width: 1600px)
@@ -110,15 +121,25 @@ body > div > a
 }
 
 /*
- * Картинки для кнопочек
+ * Положение картинок пунктов
  */
-
 body > div > a
 {
 	background-size: 100px 100px;
 	background-repeat: no-repeat;
 }
 
+body > div:nth-child(2) > a,
+body > div:nth-child(3) > a,
+body > div:nth-child(4) > a
+{
+	text-align: right;
+	background-position: 100%;
+}
+
+/*
+ * Размерности самих картинок
+ */
 body > div > a > img
 {
 	padding: 5px;
@@ -130,33 +151,31 @@ body > div > a > img
 	border-radius: 15px;
 }
 
-body > div:nth-child(2) > a
+
+/*
+ * Фоновая иконка для пунктов
+ */
+#abitur > a
 {
-	text-align: right;
-	background-position: 100%;
 	background-image: url("../icon/1.png");
 }
-body > div:nth-child(3) > a
+#dates > a
 {
-	text-align: right;
-	background-position: 100%;
 	background-image: url("../icon/2.png");
 }
-body > div:nth-child(4) > a
+#education > a
 {
-	text-align: right;
-	background-position: 100%;
 	background-image: url("../icon/3.png");
 }
-body > div:nth-child(5) > a
+#students > a
 {
 	background-image: url("../icon/4.png");
 }
-body > div:nth-child(6) > a
+#TCoIT > a
 {
 	background-image: url("../icon/5.png");
 }
-body > div:nth-child(7) > a
+#contacts > a
 {
 	background-image: url("../icon/6.png");
 }
@@ -169,7 +188,7 @@ body > img:hover + div + div + div + div > a > img,
 body > img:hover + div + div + div + div + div > a > img,
 body > img:hover + div + div + div + div + div + div > a > img
 {
-	opacity:1;
+	opacity: 1;
 }
 
 /*
@@ -401,39 +420,25 @@ body > div:nth-child(7):hover > a::after
  */
 body > div > a > div
 {
-	border-left: 1px solid;
-	border-right: 1px solid;
-	width: 150px;
-	margin-left: -152px;
+	width: 200px;
 	box-sizing: border-box;
+	text-align: center;
+	font-family: navtext;
 	position: absolute;
+	top: -20%;
 	left: 0;
-	top: 0;
+	margin-left: -175px;
 	max-height:0;
 	overflow-y: hidden;
-	transition: .7s max-height cubic-bezier(0.3, 0, 0.5, 1); 
+	transition: .2s max-height cubic-bezier(0.15, 0.5, 0.8, 1);
 }
 body > div:nth-child(n+5) > a > div
 {
-	margin-left: 0;
-	margin-right: -152px;
 	right: 0;
 	left: auto;
+	margin-left: 0;
+	margin-right: -175px;
 }
-
-/*
- *
- */
-body > div > a > div > div
-{
-	height: 1px;
-	width: 100%;
-	background: black;
-	position: absolute;
-	bottom: 0;
-	z-index: 100;
-}
-
 
 /*
  * При наведение на кнопку,
@@ -441,34 +446,83 @@ body > div > a > div > div
  */
 body > div > a:hover > div
 {
-	max-height: 300px;
+	max-height: 400px;
+	transition: .7s max-height cubic-bezier(0.3, 0, 0.5, 1);
+}
+
+/*
+ * Полоска (bugfix)
+ */
+body > div > a > div > div
+{
+	height: 1px;
+	width: 178px;
+	margin: 0 11px;
+	background: black;
+	position: absolute;
+	bottom: 0;
+	z-index: 100;
 }
 
 /*
  * Пункты подменю
  */
-
 body > div > a > div > a
 {
 	display: block;
 	text-decoration: none;
 	color: black;
-	padding: 10px;
+}
+body > div > a > div > a:first-child
+{
+	height: 53px;
+	font-size: 15px;
+	padding-top: 19px;
+	box-sizing: border-box;
+	font-weight: bold;
+}
+
+body > div > a > div > a:not(:first-child)
+{
+	background: #EAEAEA;
+	margin: 0 11px;
+	padding: 10px 0;
 	border-top: 1px solid;
-	background: white;
-	font-family: navtext;
+	font-size: 16px;
+}
+
+/*
+ *
+ */
+#abitur > a > div > a:first-child {
+	background: url("menu_1.png");
+}
+#dates > a > div > a:first-child {
+	background: url("menu_2.png");
+}
+#education > a > div > a:first-child {
+	background: url("menu_3.png");
+}
+#students > a > div > a:first-child {
+	background: url("menu_4.png");
+}
+#TCoIT > a > div > a:first-child {
+	background: url("menu_5.png");
+}
+#contacts > a > div > a:first-child {
+	background: url("menu_6.png");
 }
 
 /*
  * Активация пункта подменю
  */
-body > div > a > div > a:hover
+body > div > a > div > a:not(:first-child):hover
 {
-	background: orange;
+	font-weight:bold;
 }
 
 /*
- * Пункты подменю, выползающие из логотипа
+ * Контакты
  */
 body > aside
 {
@@ -480,7 +534,6 @@ body > aside
 	text-align: center;
 	bottom: 0;
 	border-radius: 15px;
-	z-index: -100;
 	overflow-y: hidden;
 	max-height: 0;
 	transition: .9s max-height linear;
