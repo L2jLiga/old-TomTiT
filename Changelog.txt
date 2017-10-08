@@ -1,4 +1,7 @@
 
+main-page-3-rc5:
++ Compress images
+
 main-page-3-rc4:
 + Copy icons to res folder
 
