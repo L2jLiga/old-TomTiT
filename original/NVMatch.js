@@ -23,7 +23,6 @@
     module.exports = function (browserGlobal) {
       // passed global does not contain
       // references to native objects
-      browserGlobal.console = console;
       browserGlobal.parseInt = parseInt;
       browserGlobal.Function = Function;
       browserGlobal.Boolean = Boolean;
@@ -906,15 +905,6 @@
       return true;
     },
 
-  // control user notifications
-  emit =
-    function(message) {
-      if (Config.VERBOSITY) { throw new global.Error(message); }
-      if (global.console && global.console.log) {
-        global.console.log(message);
-      }
-    },
-
   Config = new global.Object({
 
     // used to enable/disable caching of result sets
@@ -1059,7 +1049,6 @@
           expr = expr.length == 2 ? expr[1] : expr[0] + '';
 
           if (match[2] && !Operators[match[2]]) {
-            emit('Unsupported operator in attribute selectors "' + selector + '"');
             return '';
           }
 
@@ -1207,8 +1196,6 @@
               expr = match[3].replace(reTrimSpaces, '');
 
               if (Config.SIMPLENOT && !reSimpleNot.test(expr)) {
-                // see above, log error but continue execution
-                emit('Negation pseudo-class only accepts simple selectors "' + selector + '"');
                 return '';
               } else {
                 if ('compatMode' in doc) {
@@ -1311,25 +1298,10 @@
 
           // if an extension fails to parse the selector
           // it must return a false boolean in "status"
-          if (!status) {
-            // log error but continue execution, don't throw real exceptions
-            // because blocking following processes maybe is not a good idea
-            emit('Unknown pseudo-class selector "' + selector + '"');
+          if ((!status) || (!expr) || (!match)) {
             return '';
           }
 
-          if (!expr) {
-            // see above, log error but continue execution
-            emit('Unknown token in selector "' + selector + '"');
-            return '';
-          }
-
-        }
-
-        // error if no matches found by the pattern scan
-        if (!match) {
-          emit('Invalid syntax in selector "' + selector + '"');
-          return '';
         }
 
         // ensure "match" is not null or empty since
@@ -1349,13 +1321,7 @@
 
       var parts;
 
-      if (!(element && element.nodeType == 1)) {
-        emit('Invalid element argument');
-        return false;
-      } else if (typeof selector != 'string') {
-        emit('Invalid selector argument');
-        return false;
-      } else if (from && from.nodeType == 1 && !contains(from, element)) {
+      if ((!(element && element.nodeType == 1)) || (typeof selector != 'string') || (from && from.nodeType == 1 && !contains(from, element))) {
         return false;
       } else if (lastContext !== from) {
         // reset context data when it changes
@@ -1375,7 +1341,6 @@
           lastMatcher = selector;
           lastPartsMatch = parts;
         } else {
-          emit('The string "' + selector + '", is not a valid CSS selector');
           return false;
         }
       } else parts = lastPartsMatch;
@@ -1406,12 +1371,10 @@
       var i, changed, element, elements, parts, token, original = selector;
 
       if (arguments.length === 0) {
-        emit('Not enough arguments');
         return [ ];
       } else if (typeof selector != 'string') {
         return [ ];
       } else if (from && !(/1|9|11/).test(from.nodeType)) {
-        emit('Invalid or illegal context element');
         return [ ];
       } else if (lastContext !== from) {
         // reset context data when it changes
@@ -1466,7 +1429,6 @@
           lastSelector = selector;
           lastPartsSelect = parts;
         } else {
-          emit('The string "' + selector + '", is not a valid CSS selector');
           return [ ];
         }
       } else parts = lastPartsSelect;
@@ -1679,9 +1641,6 @@
 
   // handle missing context in selector strings
   Dom.shortcuts = FN;
-
-  // log resolvers errors/warnings
-  Dom.emit = emit;
 
   // options enabing specific engine functionality
   Dom.Config = Config;

@@ -1,0 +1,24 @@
+
+main-page-3-rc4:
++ Copy icons to res folder
+
+main-page-3-rc3:
++ Compress images
++ Added JavaScript for IE8- support
+
+main-page-3-rc2:
++ Add icons for menus
++ Add other types of font
++ Clean-up
+
+main-page-3-rc1:
++ Background added
++ Font added
++ Make folder with original icons
+
+main-page-3-a2:
++ Logotype added
++ Bugfixes
+
+main-page-3-a1:
++ Initial version
