@@ -1,0 +1,568 @@
+@charset "UTF-8";
+
+/*
+ * Основной шрифт главной страницы
+ */
+@font-face
+{
+	font-family: navtext;
+	src: url("fonts/HelveticaNeueCyr-Light.eot");
+	src: local("HelveticaNeueCyr"),
+	url("fonts/HelveticaNeueCyr-Light.woff2") format("woff2"),
+	url("fonts/HelveticaNeueCyr-Light.woff") format("woff"),
+	url("fonts/HelveticaNeueCyr-Light.ttf") format("ttf"),
+	url("fonts/HelveticaNeueCyr-Light.otf") format("opentype"),
+	url("fonts/HelveticaNeueCyr-Light.eot") format("embedded-opentype");
+}
+
+/*
+ * Накладываем общий фон
+ */
+html
+{
+	background-image:url("background.jpg");
+	height: 100vh;
+	width: 100vw;
+	animation: mainpagebg 40s infinite linear;
+}
+
+@keyframes mainpagebg
+{
+	from {background-position: 0px;}
+	to {background-position: 1366px;}
+}
+
+@media(min-height: 768px)
+{
+	@keyframes mainpagebg
+	{
+		0% {background-position: 100%;}
+		50% {background-position: 0;}
+		100% {background-position: 100%;}		
+	}
+	html
+	{
+		background-size: auto 100%;
+	}
+}
+
+@media(min-width: 1500px)
+{
+	@keyframes mainpagebg
+	{
+		from {background-position: 0;}
+		to {background-position: 100vw;}
+	}
+	html
+	{
+		background-size: 100% 100%;
+	}
+}
+
+/*
+ * Контейнер с пунктами меню
+ */
+body
+{
+	padding: 0;
+	width: 1024px;
+	height: 600px;
+	position: absolute;
+	top:0;
+	bottom:0;
+	left: 0;
+	right:0;
+	margin: auto;
+	overflow: hidden;
+}
+
+@media (max-width: 1080px)
+{
+	body
+	{
+		transform: scale(0.8);
+	}
+}
+
+@media(min-width: 1600px)
+{
+	body
+	{
+		transform: scale(1.5);
+	}
+}
+
+/*
+ * Внешний вид логотипа по центру + анимация увеличения
+ */
+body > img
+{
+	width: 200px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding: 25px;
+	background: white;
+	border-radius: 15px;
+	border: 1px solid blue;
+	transition: .9s all linear;
+}
+
+body > img:hover
+{
+	width: 240px;
+	padding: 9px 5px 10px 5px;
+}
+
+
+/*
+ * Общий вид остальных кнопочек
+ */
+body > div
+{
+	position: absolute;
+	width: 150px;
+	height: 100px;
+}
+
+body > div > a
+{
+	width: 150px;
+	height: 100px;
+	display: block;
+	position: relative;
+	opacity: 0.3;
+	transition: 1s opacity;
+}
+
+/*
+ * Положение картинок пунктов
+ */
+body > div > a
+{
+	background-size: 100px 100px;
+	background-repeat: no-repeat;
+}
+
+body > div:nth-child(2) > a,
+body > div:nth-child(3) > a,
+body > div:nth-child(4) > a
+{
+	text-align: right;
+	background-position: 100%;
+}
+
+/*
+ * Размерности самих картинок
+ */
+body > div > a > img
+{
+	padding: 5px;
+	width: 90px;
+	height: 90px;
+	opacity: 0;
+	transition: 0.7s opacity linear;
+	background-color: white;
+	border-radius: 15px;
+}
+
+
+/*
+ * Фоновая иконка для пунктов
+ */
+#abitur > a
+{
+	background-image: url("icon/1.png");
+}
+#dates > a
+{
+	background-image: url("icon/2.png");
+}
+#education > a
+{
+	background-image: url("icon/3.png");
+}
+#students > a
+{
+	background-image: url("icon/4.png");
+}
+#TCoIT > a
+{
+	background-image: url("icon/5.png");
+}
+#contacts > a
+{
+	background-image: url("icon/6.png");
+}
+
+body > div:hover > a > img,
+body > img:hover ~ div > a > img
+{
+	opacity: 1;
+}
+
+/*
+ * Активные зоны для отдельных элементов
+ */
+body > div:nth-child(2)
+{
+	padding-right: 70px;
+	padding-bottom: 40px;
+}
+body > div:nth-child(5)
+{
+	padding-left: 70px;
+	padding-bottom: 40px;
+}
+
+body > div:nth-child(3)
+{
+	padding-right: 82px;
+}
+body > div:nth-child(6)
+{
+	padding-left: 82px;
+}
+
+body > div:nth-child(4)
+{
+	padding-right: 70px;
+	padding-top: 40px;
+}
+body > div:nth-child(7)
+{
+	padding-left: 70px;
+	padding-top: 40px;
+}
+
+/*
+ * Положение кнопочек в неактивном режиме
+ */
+body > div:nth-child(2)
+{
+	top: 15%;
+	left: 17%;
+}
+body > div:nth-child(5)
+{
+	top: 15%;
+	right: 17%;
+}
+
+body > div:nth-child(3)
+{
+	top: 0;
+	bottom: 0;
+	left: 15%;
+	margin: auto 0;
+}
+body > div:nth-child(6)
+{
+	top: 0;
+	bottom: 0;
+	right: 15%;
+	margin: auto 0;
+}
+
+body > div:nth-child(4)
+{
+	bottom: 15%;
+	left: 17%;
+}
+body > div:nth-child(7)
+{
+	bottom: 15%;
+	right: 17%;
+}
+
+/*
+ * При активации кнопочек
+ */
+body > div:hover > a,
+body > img:hover ~ div > a
+{
+	opacity: 1;
+}
+
+/*
+ * Общие настройки линий
+ */
+body > div > a::after
+{
+	content: '';
+	position: absolute;
+	width: 1.5px;
+	height: 10px;
+	background-color: RGBA(0,101,228,0.8);
+	opacity: 0;
+	transition: 0.5s opacity, 0.8s all;
+}
+
+/*
+ * Поворот и положение линий
+ */
+
+body > div:nth-child(2) > a::after
+{
+	transform: rotate(-83grad);
+	bottom: 0;
+	right: 0;
+	margin-bottom: -12%;
+	margin-right: -41%;
+}
+body > div:nth-child(5) > a::after
+{
+	transform: rotate(83grad);
+	bottom: 0;
+	left: 0;
+	margin-bottom: -12%;
+	margin-left: -41%;
+}
+
+body > div:nth-child(3) > a::after
+{
+	transform:rotate(100grad);
+	top: 0;
+	bottom: 0;
+	margin: auto -50% auto auto;
+	right: 0;
+}
+body > div:nth-child(6) > a::after
+{
+	transform:rotate(100grad);
+	top: 0;
+	bottom: 0;
+	margin: auto auto auto -50%;
+	left: 0;
+}
+
+
+body > div:nth-child(4) > a::after
+{
+	transform: rotate(83grad);
+	top: 0;
+	right: 0;
+	margin-top: -12%;
+	margin-right: -41%;
+}
+body > div:nth-child(7) > a::after
+{
+	transform: rotate(-83grad);
+	top: 0;
+	left: 0;
+	margin-top: -12%;
+	margin-left: -41%;
+}
+
+/*
+ * Общие настройки для линий при наведение
+ */
+body > div:hover > a::after,
+body > img:hover ~ div > a::after
+{
+	height: 50px;
+	opacity: 1;
+}
+
+/*
+ * Частные настройки линий при наведение
+ */
+body > img:hover + div > a::after,
+body > div:nth-child(2):hover > a::after
+{
+	bottom: 0;
+	right: 0;
+	margin-bottom: -32px;
+	margin-right: -35px;
+}
+
+body > img:hover ~ div:nth-child(5) > a::after,
+body > div:nth-child(5):hover > a::after
+{
+	bottom: 0;
+	left: 0;
+	margin-bottom: -32px;
+	margin-left: -35px;
+}
+
+body > img:hover + div + div > a::after,
+body > div:nth-child(3):hover > a::after
+{
+	margin-right: -30%;
+	height: 70px;
+	opacity: 1;
+}
+
+body > img:hover ~ div:nth-child(6) > a::after,
+body > div:nth-child(6):hover > a::after
+{
+	margin-left: -30%;
+	height: 70px;
+	opacity: 1;
+}
+
+
+body > img:hover ~ div:nth-child(4) > a::after,
+body > div:nth-child(4):hover > a::after
+{
+	top: 0;
+	right: 0;
+	margin-top: -32px;
+	margin-right: -35px;
+}
+
+body > img:hover ~ div:nth-child(7) > a::after,
+body > div:nth-child(7):hover > a::after
+{
+	top: 0;
+	left: 0;
+	margin-top: -32px;
+	margin-left: -35px;
+}
+
+/*
+ * Блок подменю
+ */
+body > div > a > section
+{
+	width: 200px;
+	box-sizing: border-box;
+	text-align: center;
+	font-family: navtext;
+	position: absolute;
+	top: -20%;
+	left: 0;
+	margin-left: -175px;
+	max-height:0;
+	overflow-y: hidden;
+	transition: .2s max-height cubic-bezier(0.15, 0.5, 0.8, 1);
+}
+body > div:nth-child(n+5) > a > section
+{
+	right: 0;
+	left: auto;
+	margin-left: 0;
+	margin-right: -175px;
+}
+
+/*
+ * При наведение на кнопку,
+ * Анимация выползания меню
+ */
+body > div > a:hover > section
+{
+	max-height: 400px;
+	transition: .7s max-height cubic-bezier(0.3, 0, 0.5, 1);
+}
+
+/*
+ * Полоска (bugfix)
+ */
+body > div > a > section > div
+{
+	height: 1px;
+	width: 178px;
+	margin: 0 11px;
+	background: black;
+	position: absolute;
+	bottom: 0;
+	z-index: 100;
+}
+
+/*
+ * Пункты подменю
+ */
+body > div > a > section > a
+{
+	display: block;
+	text-decoration: none;
+	color: black;
+}
+body > div > a > section > h1
+{
+	height: 53px;
+	font-size: 15px;
+	padding-top: 19px;
+	box-sizing: border-box;
+	font-weight: bold;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+}
+
+body > div > a > section > a
+{
+	background: #EAEAEA;
+	margin: 0 11px;
+	padding: 10px 0;
+	border-top: 1px solid;
+	font-size: 16px;
+}
+
+/*
+ *
+ */
+#abitur > a > section > h1 {
+	background: url("icon/menu_1.png");
+}
+#dates > a > section > h1 {
+	background: url("icon/menu_2.png");
+}
+#education > a > section > h1 {
+	background: url("icon/menu_3.png");
+}
+#students > a > section > h1 {
+	background: url("icon/menu_4.png");
+}
+#TCoIT > a > section > h1 {
+	background: url("icon/menu_5.png");
+}
+#contacts > a > section > h1 {
+	background: url("icon/menu_6.png");
+}
+
+/*
+ * Активация пункта подменю
+ */
+body > div > a > section > a:hover
+{
+	font-weight:bold;
+}
+
+/*
+ * Контакты
+ */
+body > aside
+{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 200px;
+	text-align: center;
+	bottom: 0;
+	border-radius: 15px;
+	overflow-y: hidden;
+	max-height: 0;
+	transition: .9s max-height linear;
+	font-family: navtext;
+	background: white;
+}
+
+body > aside > *
+{
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	margin: 0.25em 0;
+}
+
+/*
+ * Выпадание пунктов меню при наведение
+ */
+body > img:hover ~ aside,
+body > aside:hover
+{
+	max-height: 300px;
+}

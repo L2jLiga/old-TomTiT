@@ -1,3 +1,5 @@
+teh_site_3_a1:
++ Added sample pages
 
 main-page-3-rc6:
 + Added headers for popup menu

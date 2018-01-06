@@ -1,0 +1,35 @@
+﻿@charset "UTF-8";
+
+nav > a
+{
+	background-image: linear-gradient(to right, RGBA(255,218,68,0) 0%, RGBA(255,255,255,0.5) 50%, RGBA(255,218,68, 0) 100%);
+}
+
+nav > a:hover
+{
+	background: linear-gradient(to right, RGBA(0,0,0,0) 0%, RGB(255,218,68) 50%, RGBA(0,0,0,0) 100%);
+}
+
+nav > div > a
+{
+	background-image: url("logo.png"),
+	linear-gradient(to bottom, RGBA(255,218,68,0.4) 0%, RGBA(255,218,68,0.1) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.5) 100%),
+	linear-gradient(to right, RGBA(255,218,68,0.4) 0%, RGBA(255,218,68,0.1) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.4) 100%);
+}
+
+nav::before,
+nav > div::before
+{
+	background: #ffe98f;
+}
+
+main > section > h1
+{
+	background: linear-gradient(135grad, #ffe98f 0%, rgba(255, 233, 143, 0.5) 50%, #ffe98f 100%);
+}
+
+footer
+{
+	background: linear-gradient(to bottom,RGBA(255,218,68,0.4) 0%, RGBA(255,218,68,0.15) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.5) 100%),
+	linear-gradient(to right,RGBA(255,218,68,0.5) 0%, RGBA(255,218,68,0.15) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.5) 100%);
+}
