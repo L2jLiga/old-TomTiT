@@ -15,7 +15,7 @@
 	</![endif]-->
 </head>
 <body>
-	<img src="res/logo.png" alt="" />
+	<aside>ТТИТ</aside>
 	<div id="TCoIT">
 		<p>О техникуме</p>
 		<a>
@@ -110,5 +110,13 @@
 			</section>
 		</a>
 	</div>
+	<script>
+		setTimeout(AnimateOn, 100);
+		function AnimateOn (){
+			var aside = document.getElementsByTagName('aside');
+			aside[0].setAttribute("style","transition: .9s all linear;");
+		}
+			</script>
+
 </body>
 </html>
