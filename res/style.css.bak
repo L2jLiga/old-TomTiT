@@ -58,6 +58,12 @@ nav > a
 	box-sizing: border-box;
 	display: inline-block;
 	margin-right: -4px;
+	background-image: linear-gradient(to right, RGBA(255,218,68,0) 0%, RGBA(255,255,255,0.5) 50%, RGBA(255,218,68, 0) 100%);
+}
+
+nav > a:hover
+{
+	background: linear-gradient(to right, RGBA(0,0,0,0) 0%, RGB(255,218,68) 50%, RGBA(0,0,0,0) 100%);
 }
 
 nav > div
@@ -74,6 +80,10 @@ nav > div > a
 	width: 121px;
 	height: 96px;
 	background-color: white;
+	background-image: url("logo.png"),
+	linear-gradient(to bottom, RGBA(255,218,68,0.4) 0%, RGBA(255,218,68,0.1) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.5) 100%),
+	linear-gradient(to right, RGBA(255,218,68,0.4) 0%, RGBA(255,218,68,0.1) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.4) 100%)
+	;
 	background-size: 121px 96px, 100%, 100%;
 	background-repeat: no-repeat;
 	background-position: 50%;
@@ -87,6 +97,7 @@ nav > div::before
 	top: 0;
 	width: 221px;
 	height: 100%;
+	background: #ffe98f;
 	z-index: -100;
 }
 
@@ -102,6 +113,7 @@ nav:before
 	right: 0;
 	top: 0;
 	margin: 0 auto;
+	background: #ffe98f;
 	z-index: -15;
 }
 
@@ -139,6 +151,7 @@ main > section > :not(h1)
 main > section > h1
 {
 	display: block;
+	background: linear-gradient(135grad, #ffe98f 0%, rgba(255, 233, 143, 0.5) 50%, #ffe98f 100%);
 	padding: 5px 0;
 	margin: 0 0 15px;
 }
@@ -182,6 +195,8 @@ footer
 	bottom: 0;
 	font-size: 16px;
 	padding: 25px;
+	background: linear-gradient(to bottom,RGBA(255,218,68,0.4) 0%, RGBA(255,218,68,0.15) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.5) 100%),
+	linear-gradient(to right,RGBA(255,218,68,0.5) 0%, RGBA(255,218,68,0.15) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.5) 100%);
 	width: 1024px;
 	box-sizing: border-box;
 	z-index:5;
