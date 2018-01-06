@@ -110,6 +110,92 @@ body > div
 	height: 100px;
 }
 
+/*
+ * Подписи у значков
+ */
+body > div > p
+{
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: bold;
+	position:absolute;
+	bottom: -3px;
+	width: 160px;
+	left:0;
+	margin-left: auto;
+	right: 0;
+	margin-right: auto;
+	color: #888;
+	opacity: 0.7;
+	transition: 0.3s color linear;
+}
+
+body > div:nth-child(3) > p
+{
+	width: 200px;
+	bottom: -50%;
+}
+
+body > div:nth-child(5) > p
+{
+	bottom: -20%;
+}
+
+body > div:nth-child(6) > p
+{
+	bottom: -50%;
+}
+
+body > div:nth-child(4) > p
+{
+	width: 120px;
+}
+
+body > div:nth-child(n+5) > p
+{
+	width: 90px;
+}
+
+body > div:nth-child(4) > p,
+body > div:nth-child(7) > p
+{
+	bottom: -50px;
+}
+
+/*
+ * Активные цвета
+ */
+body > img:hover ~ #TCoIT > p,
+#TCoIT:hover > p
+{
+	color: RGB(216,0,39);
+}
+body > img:hover ~ #abitur > p,
+#abitur:hover > p
+{
+	color: RGB(145,220,90);
+}
+body > img:hover ~ #dates > p,
+#dates:hover > p
+{
+	color: RGB(147,62,197);
+}
+body > img:hover ~ #education > p,
+#education:hover > p
+{
+	color: RGB(62,181,241);
+}
+body > img:hover ~ #students > p,
+#students:hover > p
+{
+	color: RGB(255,218,68);
+}
+body > img:hover ~ #contacts > p,
+#contacts:hover > p
+{
+	color: RGB(231,153,122);
+}
+
 body > div > a
 {
 	width: 150px;
@@ -118,13 +204,6 @@ body > div > a
 	position: relative;
 	opacity: 0.3;
 	transition: 1s opacity;
-}
-
-/*
- * Положение картинок пунктов
- */
-body > div > a
-{
 	background-size: 100px 100px;
 	background-repeat: no-repeat;
 }
@@ -138,7 +217,7 @@ body > div:nth-child(4) > a
 }
 
 /*
- * Размерности самих картинок
+ * Размерности картинок
  */
 body > div > a > img
 {

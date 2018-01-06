@@ -1,3 +1,6 @@
+teh_site_3_a4:
++ Fixed crossbrowsers issues on main-page
+
 teh_site_3_a3:
 + Little UI changes
 
