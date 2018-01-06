@@ -22,7 +22,6 @@
 	src: local("HelveticaNeueCyr"),
 	url("fonts/HelveticaNeueCyr-Light.woff2") format("woff2"),
 	url("fonts/HelveticaNeueCyr-Light.woff") format("woff"),
-	url("fonts/HelveticaNeueCyr-Light.ttf") format("truetype"),
 	url("fonts/HelveticaNeueCyr-Light.otf") format("opentype"),
 	url("fonts/HelveticaNeueCyr-Light.eot") format("embedded-opentype");
 }
@@ -101,7 +100,7 @@ nav > a:first-of-type
 {
 	font-size: 0;
 	box-sizing:content-box;
-	background-image: url("logo.png");
+	background-image: url("alt_logo.png");
 	background-repeat: no-repeat;
 	background-position: 50%;
 }

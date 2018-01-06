@@ -1,3 +1,8 @@
+teh_site_3_rc3:
++ Changed icons
++ Changed fonts
++ UI changes on main-page
+
 teh_site_3_rc2:
 + Added hyphenator
 + Changed icons
