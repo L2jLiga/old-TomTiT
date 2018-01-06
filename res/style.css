@@ -96,6 +96,11 @@ nav > a:hover
 	background: RGBA(255,255,255,0.1);
 }
 
+nav > a:active
+{
+	box-shadow:4px 4px 5px RGBA(0,0,0,0.3) inset;
+}
+
 nav > a:first-of-type
 {
 	font-size: 0;
@@ -163,7 +168,7 @@ main > section > :nth-child(2)
 
 main > section > :last-child
 {
-	border-image: linear-gradient(to bottom, RGBA(140,140,140,1) 0%, RGBA(140,140,140,.8) 50%, RGBA(0,0,0,0) 100%);
+	border-image: linear-gradient(to bottom, RGBA(140,140,140,1) 0%, RGBA(140,140,140,.8) 50%, RGBA(0,0,0,0.3) 100%);
 	border-image-slice: 1;
 	
 }
@@ -178,6 +183,18 @@ main > section > div > p > i
 {
 	display: inline-block;
 	width: 300px;
+}
+
+main > section > div > p  > a
+{
+	display: block;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+main > section > div > p > a > img
+{
+	width: 70%;
 }
 
 main > section > div > a::before

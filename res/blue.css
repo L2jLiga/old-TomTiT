@@ -6,5 +6,5 @@
 html > body::before,
 nav, #footerwrap
 {
-	background-color: RGB(50,50,255);
+	background-color: #3232FF;
 }

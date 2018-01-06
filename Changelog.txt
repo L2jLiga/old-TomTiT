@@ -1,3 +1,7 @@
+teh_site_3_rc4:
++ Added news example with image
++ Fixed browsers bugs
+
 teh_site_3_rc3:
 + Changed icons
 + Changed fonts

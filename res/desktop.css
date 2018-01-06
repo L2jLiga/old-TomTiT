@@ -36,7 +36,7 @@ nav > a:first-of-type
 	height: 35px;
 	background-size: 61px 48px, 100%, 100%;
 	background-position: 50%;
-	padding: 13px 50px 0 50px;
+	padding: 11px 50px 0 50px;
 	vertical-align: top;
 }
 
@@ -136,6 +136,11 @@ main > section > div
 {
 	display: inline-block;
 	counter-reset: item;
+}
+
+main > section > :last-child
+{
+	border-image: linear-gradient(to bottom, RGBA(140,140,140,1) 0%, RGBA(140,140,140,.8) 50%, RGBA(0,0,0,0) 100%);
 }
 
 /*
