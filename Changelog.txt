@@ -1,3 +1,9 @@
+teh_site_3_rc2:
++ Added hyphenator
++ Changed icons
++ Removed duplicated icons
++ UI changes on subpages
+
 teh_site_3_rc1:
 + Changed background on main-page
 + Added more pages

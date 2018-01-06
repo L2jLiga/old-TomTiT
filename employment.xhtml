@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" class="hyphenate">
 <head>
 	<meta charset="UTF-8" />
 	<title>Томский техникум информационных технологий</title>
@@ -37,6 +37,18 @@
 			});
 		});
 	</script>
+
+	<!-- Паттерн переноса слов -->
+	<script src="res/js/Hyphenator_loader.js"></script>
+	<script>
+	Hyphenator_Loader.init(
+		{
+			"en": "automatically",
+			"ru": "automatically"
+		},
+		"./res/js/Hyphenator.js"
+	);
+	</script>
 </head>
 <body>
 	<nav>
@@ -53,7 +65,7 @@
 	<aside>
 		<section>
 			<h1>Объявление!</h1>
-			<p>Наш тех&#173;ни&#173;кум стал по&#173;бе&#173;ди&#173;те&#173;лем об&#173;ласт&#173;ной твор&#173;чес&#173;кой фо&#173;то&#173;выс&#173;тав&#173;ки «Мо&#173;мент сту&#173;ден&#173;чес&#173;кой жиз&#173;ни…».</p>
+			<p>Наш техникум стал победителем областной творческой фотовыставки «Момент студенческой жизни…».</p>
 		</section>
 		<section class="contact">
 			<h1>Контакты</h1>

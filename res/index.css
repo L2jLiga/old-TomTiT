@@ -37,7 +37,7 @@ body
 	height: 600px;
 	position: absolute;
 	top:0;
-	bottom:0;
+	bottom:10%;
 	left: 0;
 	right:0;
 	margin: auto;
@@ -627,6 +627,7 @@ body > aside
 	overflow-y: hidden;
 	max-height: 0;
 	transition: .9s max-height linear, .9s box-shadow linear;
+	background: white;
 }
 
 body > aside > *

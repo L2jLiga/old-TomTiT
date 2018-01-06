@@ -6,17 +6,5 @@
 html > body::before,
 nav, #footerwrap
 {
-	background: RGB(255,218,68);
-}
-
-/*
- * Дубль цветового оформления, но с прозрачностью,
- * для настройки степени затемненности заголовков
- * страницы относительно других элементов
- */
-aside > section > h1,
-main > section > h1,
-aside::after
-{
-	background: RGBA(255,218,68,.5);
+	background: RGB(255,127,0);
 }

@@ -4,6 +4,15 @@
  */
 
 /*
+ * Кроссбраузерной, *** Chrome
+ */
+*
+{
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+}
+ 
+/*
  * Основной шрифт главной страницы
  */
 @font-face
@@ -62,6 +71,7 @@ nav
 	position: fixed;
 	top: 0;
 	cursor: default;
+	box-shadow: 0 15px 20px -3px rgba(16, 16, 16, 0.4);
 }
 
 .mob_button
@@ -117,27 +127,58 @@ main
 	text-align: center;
 }
 
-/* Отступы для всего, кроме заголовков */
-main > section > :not(h1)
+main > h1
 {
-	padding-left: 15px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+/* Отступы для всего, кроме заголовков */
+main > section
+{
+	font-size: 18px;
 }
 
 /* Отступы для заголовков */
 main > section > h1
 {
 	padding: 5px 0;
+	padding-right: 7px;
+}
+
+main > section > :not(h1)
+{
+	margin: 0 15px;
+	padding: 5px;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	line-height: 1.5;
+	width: 95%;
+}
+
+main > section > :nth-child(2)
+{
+	padding-top: 15px;
+	box-shadow: 0 15px 20px -3px rgba(16, 16, 16, 0.4) inset;
+}
+
+main > section > :last-child
+{
+	border-image: linear-gradient(to bottom, RGBA(140,140,140,1) 0%, RGBA(140,140,140,.8) 50%, RGBA(0,0,0,0) 100%);
+	border-image-slice: 1;
+	
 }
 
 main > section > div > p
 {
+	text-indent: 1.5em;
 	text-align: left;
 }
 
 main > section > div > p > i
 {
 	display: inline-block;
-	width: 200px;
+	width: 300px;
 }
 
 main > section > div > a::before
@@ -163,4 +204,27 @@ footer
 	padding: 15px;
 	box-sizing: border-box;
 	z-index:5;
+}
+
+/*
+ * Настройки степени затемненности заголовков
+ * страницы относительно других элементов
+ */
+section > h1,
+section > h1,
+aside::after
+{
+	background: RGBA(200,200,200,.5);
+}
+
+/*
+ * Фон для подпунктов
+ */
+section > :not(h1)
+{
+	background: RGBA(200,200,200,.1);
+}
+section > :last-child
+{
+	background: linear-gradient(to bottom, RGBA(200,200,200,.1) 0%, RGBA(200,200,200,.1) 50%, RGBA(200,200,200,0) 100%);
 }

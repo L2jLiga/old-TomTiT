@@ -1,19 +1,11 @@
 ﻿@charset "UTF-8";
 /*
- * Кроссбраузерной, *** Chrome
- */
-*
-{
-	-webkit-margin-before: 0;
-	-webkit-margin-after: 0;
-}
-
-/*
  * Общие настройки
  */
 body
 {
 	width: 1024px;
+	overflow-x:hidden;
 }
 
 /*
@@ -24,6 +16,7 @@ nav
 	height: 48px;
 	text-align:left;
 	width: 1024px;
+	border-radius: 0 0 3px 3px;
 }
 
 nav::before
@@ -52,7 +45,7 @@ aside::after
 	position: fixed;
 	display: block;
 	top: 80px;
-	left: 217px;
+	margin-left: 217px;
 	content: '';
 	width: 2px;
 	height: 100vh;
@@ -75,7 +68,7 @@ aside > section
 
 aside > section:not(:first-child)
 {
-	margin-top: 5px;
+	padding-top: 5px;
 }
 
 aside > section > h1
@@ -111,7 +104,7 @@ aside > section.contact > p:nth-child(2n+1)
 
 aside > section.contact > p:nth-child(2n+2)
 {
-	margin-top: 7px;
+	padding-top: 7px;
 	font-weight: bold;
 }
 /*
@@ -121,12 +114,13 @@ main
 {
 	width: 1024px;
 	box-sizing: border-box;
-	padding: 70px 3px 75px 224px;
+	padding: 70px 25px 75px 224px;
+	min-height: 100vh;
 }
 
 main > h1
 {
-	margin-bottom: 30px;
+	margin-top: 0;
 }
 
 /*
@@ -136,11 +130,6 @@ main > section
 {
 	margin-top: 30px;
 	width: 100%;
-}
-
-main > section > h1
-{
-	display: block;
 }
 
 main > section > div
@@ -157,6 +146,7 @@ footer
 	position: fixed;
 	bottom: 0;
 	width: 1024px;
+	border-radius: 3px 3px 0 0;
 }
 #footerwrap
 {
@@ -169,4 +159,5 @@ footer
 	margin: 0 auto;
 	background: white;
 	z-index: 4;
+	border-radius: 3px 3px 0 0;
 }
