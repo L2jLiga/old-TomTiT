@@ -1,3 +1,7 @@
+teh_site_3_rc1:
++ Changed background on main-page
++ Added more pages
+
 teh_site_3_a4:
 + Fixed crossbrowsers issues on main-page
 

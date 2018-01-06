@@ -33,6 +33,20 @@ nav
 		width: 48px;
 	}
 }
+
+nav > a:first-of-type
+{
+	margin: auto;
+	border: none;
+	transition: none;
+}
+
+nav > a:first-of-type:hover
+{
+	border: none;
+	box-shadow: none;
+}
+
 nav:not(.active) > a:first-of-type
 {
 	background-color: RGBA(255,255,255,0.5);		

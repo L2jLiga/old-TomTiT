@@ -8,8 +8,12 @@
 	<link rel="stylesheet" href="res/desktop.css" media="screen and (min-width: 1024px)" />
 	<link rel="stylesheet" href="res/tablet.css" media="(min-width: 600px) and (max-width: 1023px)" />
 	<link rel="stylesheet" href="res/mobile.css" media="(max-width: 600px)" />
-	<link rel="stylesheet" href="res/purple.css" media="all" />
+	<link rel="stylesheet" href="res/bodily.css" media="all" />
 	<link rel="shortcut icon" href="icon.ico" />
+
+	<!-- Для IE 6-8 используем jQuery 1 (медленнее),
+	     Для других браузеров jQuery 2 (быстрее, но без поддержки IE 6-8)
+	-->
 	<!--[if (gt IE 8)]>-->
 	<script src="res/js/jQuery_2.min.js"></script>
 	<!--<![endif]-->
@@ -19,7 +23,7 @@
 		<script src="res/js/NVMatch.js"></script>
 		<script src="res/js/selectivizr.js"></script>
 	<![endif]-->
-
+	
 	<!-- Кнопка показать/скрыть меню -->
 	<script>
 		$(document).ready(function(){
@@ -38,10 +42,10 @@
 	<nav>
 		<img src="" class="mob_button" alt="Меню" />
 		<a href="index.xhtml" title="Перейти на главную страницу сайта">Томский техникум информационных технологий</a>
-		<a href="">Новости</a>
-		<a href="">Памятные даты</a>
-		<a href="">Иммунизация</a>
-		<a href="">Мероприятия</a>
+		<a href="">Реквизиты</a>
+		<a href="administation.xhtml">Администрация</a>
+		<a href="">Мы на карте</a>
+		<a href="">Напишите нам</a>
 	</nav>
 	<aside>
 		<section>
@@ -57,7 +61,7 @@
 		</section>
 	</aside>
 	<main>
-		<h1>Новости</h1>
+		<h1>Трудоустройство</h1>
 		<section>
 			<h1>Контакты центра трудоустройства</h1>
 			<div>
@@ -95,6 +99,11 @@
 	</main>
 	<footer>
 		&#169; ОГБПОУ Томский Техникум Информационных Технологий
+		<!--
+			Слишком пустой, возможное содержимое (для десктопов и планшетов):
+			- Кнопка версии для слабовидящих
+			- Контакты (возможно, что будут в sidebar размещаться)
+		-->
 	</footer>
 	<div id="footerwrap"></div>
 </body>

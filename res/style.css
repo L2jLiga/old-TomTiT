@@ -61,7 +61,8 @@ nav
 {
 	position: fixed;
 	top: 0;
-} 
+	cursor: default;
+}
 
 .mob_button
 {
@@ -70,23 +71,29 @@ nav
 
 nav > a
 {
+	font-size: 14px;
 	display: inline-block;
+	border: 1px solid RGBA(0,0,0,0);
+	margin-right: -5px;
+	transition: .2s all linear;
+}
+
+nav > a:hover
+{
+	border: 1px solid black;
+	box-shadow:4px 4px 5px RGBA(0,0,0,0.3);
+	border-radius: 3px;
+	box-sizing: border-box;
+	background: RGBA(255,255,255,0.1);
 }
 
 nav > a:first-of-type
 {
-	background-image: url("logo.png");
 	font-size: 0;
-	box-sizing: content-box;
+	box-sizing:content-box;
+	background-image: url("logo.png");
 	background-repeat: no-repeat;
 	background-position: 50%;
-}
-
-nav > a:not(:first-of-type)
-{
-	font-size: 14px;
-	box-sizing: border-box;
-	margin-right: -4px;
 }
 
 /*
@@ -106,7 +113,7 @@ aside
  */
 main
 {
-	background: RGBA(255,255,255,0.7);
+	background: RGBA(255,255,255,1);
 	text-align: center;
 }
 

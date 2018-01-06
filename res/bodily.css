@@ -6,7 +6,7 @@
 html > body::before,
 nav, #footerwrap
 {
-	background: RGB(255,218,68);
+	background: RGB(134,55,25);
 }
 
 /*
@@ -18,5 +18,5 @@ aside > section > h1,
 main > section > h1,
 aside::after
 {
-	background: RGBA(255,218,68,.5);
+	background: RGBA(134,55,25,.5);
 }

@@ -15,30 +15,16 @@
 	url("fonts/HelveticaNeueCyr-Light.eot") format("embedded-opentype");
 }
 
-/*
- * Накладываем общий фон
- */
 html
 {
-	background-image:url("background.jpg");
-	height: 100vh;
+	background: linear-gradient(135grad,
+			RGBA(13, 85, 238, 0.1) 0%,
+			RGBA(255, 85, 238, 0.2) 25%,
+			RGBA(13, 85, 238, 0.2) 50%,
+			RGBA(255, 85, 238, 0.2) 75%,
+			RGBA(13, 85, 238, 0.1) 100%);
 	width: 100vw;
-}
-
-@media(min-height: 768px)
-{
-	html
-	{
-		background-size: auto 100%;
-	}
-}
-
-@media(min-width: 1500px)
-{
-	html
-	{
-		background-size: 100% 100%;
-	}
+	height: 100vh;
 }
 
 /*
@@ -56,6 +42,7 @@ body
 	right:0;
 	margin: auto;
 	overflow: hidden;
+	font-family: navtext;
 }
 
 @media (max-width: 1080px)
@@ -89,7 +76,6 @@ body > img
 	padding: 25px;
 	background: white;
 	border-radius: 15px;
-	border: 1px solid blue;
 	transition: .9s all linear;
 }
 
@@ -97,6 +83,7 @@ body > img:hover
 {
 	width: 240px;
 	padding: 9px 5px 10px 5px;
+	box-shadow: 0 0 2px 2px blue;
 }
 
 
@@ -120,7 +107,7 @@ body > div > p
 	font-weight: bold;
 	position:absolute;
 	bottom: -3px;
-	width: 160px;
+	width: 150px;
 	left:0;
 	margin-left: auto;
 	right: 0;
@@ -130,15 +117,21 @@ body > div > p
 	transition: 0.3s color linear;
 }
 
+body > img:hover ~ div > p,
+body > div:hover > p
+{
+	text-shadow: 1px 1px 1px black;
+}
+
 body > div:nth-child(3) > p
 {
-	width: 200px;
+	width: 170px;
 	bottom: -50%;
 }
 
-body > div:nth-child(5) > p
+body > div:nth-child(4) > p
 {
-	bottom: -20%;
+	width: 110px;
 }
 
 body > div:nth-child(6) > p
@@ -146,14 +139,17 @@ body > div:nth-child(6) > p
 	bottom: -50%;
 }
 
-body > div:nth-child(4) > p
+body > div:nth-child(5) > p
 {
-	width: 120px;
+	width: 80px;
 }
-
-body > div:nth-child(n+5) > p
+body > div:nth-child(6) > p
 {
-	width: 90px;
+	width: 75px;
+}
+body > div:nth-child(7) > p
+{
+	width: 80px;
 }
 
 body > div:nth-child(4) > p,
@@ -168,12 +164,12 @@ body > div:nth-child(7) > p
 body > img:hover ~ #TCoIT > p,
 #TCoIT:hover > p
 {
-	color: RGB(216,0,39);
+	color: RGB(166,0,0);
 }
 body > img:hover ~ #abitur > p,
 #abitur:hover > p
 {
-	color: RGB(145,220,90);
+	color: RGB(80,155,25);
 }
 body > img:hover ~ #dates > p,
 #dates:hover > p
@@ -188,12 +184,12 @@ body > img:hover ~ #education > p,
 body > img:hover ~ #students > p,
 #students:hover > p
 {
-	color: RGB(255,218,68);
+	color: RGB(237,175,51);
 }
 body > img:hover ~ #contacts > p,
 #contacts:hover > p
 {
-	color: RGB(231,153,122);
+	color: RGB(186,108,77);
 }
 
 body > div > a
@@ -226,37 +222,60 @@ body > div > a > img
 	height: 90px;
 	opacity: 0;
 	transition: 0.7s opacity linear;
-	background-color: white;
 	border-radius: 15px;
 }
 
 
 /*
- * Фоновая иконка для пунктов
+ * Фоновая иконка для пунктов и тень
  */
 #abitur > a
 {
 	background-image: url("icon/1.png");
 }
+#abitur > a > img
+{
+	box-shadow: 0 0 2px 2px RGBA(145,220,90,0.7);
+}
 #dates > a
 {
 	background-image: url("icon/2.png");
+}
+#dates > a > img
+{
+	box-shadow: 0 0 2px 2px RGBA(147,62,197,0.7);
 }
 #education > a
 {
 	background-image: url("icon/3.png");
 }
+#education > a > img
+{
+	box-shadow: 0 0 2px 2px RGBA(62,181,241,0.7);
+}
 #students > a
 {
 	background-image: url("icon/4.png");
+}
+#students > a > img
+{
+	box-shadow: 0 0 2px 2px RGBA(237,175,51,0.7);
 }
 #TCoIT > a
 {
 	background-image: url("icon/5.png");
 }
+#TCoIT > a > img
+{
+	box-shadow: 0 0 2px 2px RGBA(166,0,0,0.7);
+}
 #contacts > a
 {
 	background-image: url("icon/6.png");
+}
+#contacts > a > img
+{
+	box-shadow: 0 0 2px 2px RGBA(186,108,77,0.7);
 }
 
 body > div:hover > a > img,
@@ -306,6 +325,7 @@ body > div:nth-child(2)
 {
 	top: 15%;
 	left: 17%;
+	z-index: 150;
 }
 body > div:nth-child(5)
 {
@@ -492,7 +512,6 @@ body > div > a > section
 	width: 200px;
 	box-sizing: border-box;
 	text-align: center;
-	font-family: navtext;
 	position: absolute;
 	top: -20%;
 	left: 0;
@@ -607,9 +626,7 @@ body > aside
 	border-radius: 15px;
 	overflow-y: hidden;
 	max-height: 0;
-	transition: .9s max-height linear;
-	font-family: navtext;
-	background: white;
+	transition: .9s max-height linear, .9s box-shadow linear;
 }
 
 body > aside > *
@@ -626,4 +643,5 @@ body > img:hover ~ aside,
 body > aside:hover
 {
 	max-height: 300px;
+	box-shadow: 0 0 1px 1px black;
 }

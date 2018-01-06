@@ -15,7 +15,8 @@ nav, #footerwrap
  * страницы относительно других элементов
  */
 aside > section > h1,
-main > section > h1
+main > section > h1,
+aside::after
 {
-	background: RGBA(147,62,197,.3);
+	background: RGBA(147,62,197,.5);
 }

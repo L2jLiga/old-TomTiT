@@ -5,7 +5,7 @@
  */
 nav::before
 {
-	height: 92px;
+	height: 96px;
 	margin: 0 auto;
 }
 nav
@@ -24,6 +24,7 @@ nav > a:first-of-type
 	height: 72px;
 	padding: 10px;
 	background-size: 121px 96px, auto, auto;
+	margin-right: 5px;
 }
 
 nav > a:not(:first-of-type)

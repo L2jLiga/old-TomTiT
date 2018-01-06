@@ -47,6 +47,18 @@ nav > a:first-of-type
 	vertical-align: top;
 }
 
+aside::after
+{
+	position: fixed;
+	display: block;
+	top: 80px;
+	left: 217px;
+	content: '';
+	width: 2px;
+	height: 100vh;
+	overflow: hidden;
+}
+
 aside
 {
 	position: fixed;
