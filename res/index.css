@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 
 /*
  * Основной шрифт главной страницы
@@ -23,23 +23,10 @@ html
 	background-image:url("background.jpg");
 	height: 100vh;
 	width: 100vw;
-	animation: mainpagebg 40s infinite linear;
-}
-
-@keyframes mainpagebg
-{
-	from {background-position: 0px;}
-	to {background-position: 1366px;}
 }
 
 @media(min-height: 768px)
 {
-	@keyframes mainpagebg
-	{
-		0% {background-position: 100%;}
-		50% {background-position: 0;}
-		100% {background-position: 100%;}		
-	}
 	html
 	{
 		background-size: auto 100%;
@@ -48,11 +35,6 @@ html
 
 @media(min-width: 1500px)
 {
-	@keyframes mainpagebg
-	{
-		from {background-position: 0;}
-		to {background-position: 100vw;}
-	}
 	html
 	{
 		background-size: 100% 100%;

@@ -1,4 +1,8 @@
-﻿@charset "UTF-8";
+﻿@charset 'UTF-8';
+/*
+ * Универсальные стили, одинаковые для всех типов устройств
+ */
+
 /*
  * Основной шрифт главной страницы
  */
@@ -15,22 +19,12 @@
 }
 
 /*
- * Кроссбраузерной, *** Chrome
- */
-*
-{
-	-webkit-margin-before: 0;
-	-webkit-margin-after: 0;
-	font-family: navtext;
-}
-
-/*
- * Общие настройки
+ * Общие настройки страницы
  */
 body
 {
 	margin: 0 auto;
-	width: 1024px;
+	font-family: navtext;
 }
 a
 {
@@ -39,21 +33,22 @@ a
 }
 
 /*
- * Панель навигации
+ * Панель навигации (фиксированное меню)
  */
 nav
 {
 	position: fixed;
 	top: 0;
-	height: 48px;
-	text-align:left;
-	width: 1024px;
+} 
+
+.mob_button
+{
+	display: none;
 }
 
 nav > a
 {
 	display: inline-block;
-	padding: 15px 10px;
 	font-size: 14px;
 	box-sizing: border-box;
 	display: inline-block;
@@ -71,63 +66,21 @@ nav > div > a
 	display: block;
 	font-size: 0;
 	box-sizing: content-box;
-	width: 121px;
-	height: 96px;
 	background-color: white;
-	background-size: 121px 96px, 100%, 100%;
 	background-repeat: no-repeat;
 	background-position: 50%;
-	padding: 10px 50px;
 }
 
-nav > div::before
+nav > div > :not(:first-child)
 {
-	content: '';
-	position: fixed;
-	top: 0;
-	width: 221px;
-	height: 100%;
-	z-index: -100;
-}
-
-nav::before,
-nav:before
-{
-	content: '';
-	display: block;
-	height: 46px;
-	width: 803px;
-	position: fixed;
-	left: 221px;
-	right: 0;
-	top: 0;
-	margin: 0 auto;
-	z-index: -15;
+	display: none;
 }
 
 /*
- * Основной контент сайта
- */
-main
-{
-	margin-top: 75px;
-	text-align: center;
-	width: 803px;
-	margin-left: 221px;
-}
-
-main > h1
-{
-	margin-bottom: 30px;
-}
-
-/*
- * Настройка подпунктов меню
+ *
  */
 main > section
 {
-	margin-top: 30px;
-	width: inherit;
 	text-align: center;
 }
 
@@ -138,15 +91,7 @@ main > section > :not(h1)
 
 main > section > h1
 {
-	display: block;
 	padding: 5px 0;
-	margin: 0 0 15px;
-}
-
-main > section > div
-{
-	display: inline-block;
-	counter-reset: item;
 }
 
 main > section > div > p
@@ -178,29 +123,8 @@ main > section > div > a
  */
 footer
 {
-	position: fixed;
-	bottom: 0;
 	font-size: 16px;
-	padding: 25px;
-	width: 1024px;
+	padding: 15px;
 	box-sizing: border-box;
 	z-index:5;
-}
-#footerwrap
-{
-	position: fixed;
-	height: 67px;
-	width: 1024px;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: 0 auto;
-	background: white;
-	z-index: 4;
-}
-main::after
-{
-	content: '';
-	display: block;
-	margin-bottom: 80px;
 }

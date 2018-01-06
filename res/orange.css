@@ -14,7 +14,22 @@ nav > div > a
 {
 	background-image: url("logo.png"),
 	linear-gradient(to bottom, RGBA(255,218,68,0.4) 0%, RGBA(255,218,68,0.1) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.5) 100%),
-	linear-gradient(to right, RGBA(255,218,68,0.4) 0%, RGBA(255,218,68,0.1) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.4) 100%);
+	linear-gradient(to right, RGBA(255,218,68,0.4) 0%, RGBA(255,218,68,0.1) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.5) 100%);
+}
+
+nav > div > section > h1
+{
+	background: RGBA(255,218,68,0.6);
+}
+
+nav > div > section.submenu > a
+{
+	border-color: RGBA(255,218,68,0.4);
+}
+
+nav > div > section.submenu > a:hover
+{
+	background-image: linear-gradient(to right, RGBA(255,218,68,0) 0%, RGBA(255,218,68,0.2) 20%, RGBA(255,218,68,0.25) 50%, RGBA(255,218,68,0.2) 80%, RGBA(255,218,68,0) 100%);
 }
 
 nav::before,
