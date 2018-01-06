@@ -1,50 +1,21 @@
 ﻿@charset "UTF-8";
 
-nav > a
+/*
+ * Общее цветовое оформление
+ */
+html > body::before,
+nav, #footerwrap
 {
-	background-image: linear-gradient(to right, RGBA(255,218,68,0) 0%, RGBA(255,255,255,0.5) 50%, RGBA(255,218,68, 0) 100%);
+	background: RGB(255,218,68);
 }
 
-nav > a:hover
-{
-	background: linear-gradient(to right, RGBA(0,0,0,0) 0%, RGB(255,218,68) 50%, RGBA(0,0,0,0) 100%);
-}
-
-nav > div > a
-{
-	background-image: url("logo.png"),
-	linear-gradient(to bottom, RGBA(255,218,68,0.4) 0%, RGBA(255,218,68,0.1) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.5) 100%),
-	linear-gradient(to right, RGBA(255,218,68,0.4) 0%, RGBA(255,218,68,0.1) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.5) 100%);
-}
-
-nav > div > section > h1
-{
-	background: RGBA(255,218,68,0.6);
-}
-
-nav > div > section.submenu > a
-{
-	border-color: RGBA(255,218,68,0.4);
-}
-
-nav > div > section.submenu > a:hover
-{
-	background-image: linear-gradient(to right, RGBA(255,218,68,0) 0%, RGBA(255,218,68,0.2) 20%, RGBA(255,218,68,0.25) 50%, RGBA(255,218,68,0.2) 80%, RGBA(255,218,68,0) 100%);
-}
-
-nav::before,
-nav > div::before
-{
-	background: #ffe98f;
-}
-
+/*
+ * Дубль цветового оформления, но с прозрачностью,
+ * для настройки степени затемненности заголовков
+ * страницы относительно других элементов
+ */
+aside > section > h1,
 main > section > h1
 {
-	background: linear-gradient(135grad, #ffe98f 0%, rgba(255, 233, 143, 0.5) 50%, #ffe98f 100%);
-}
-
-footer
-{
-	background: linear-gradient(to bottom,RGBA(255,218,68,0.4) 0%, RGBA(255,218,68,0.15) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.5) 100%),
-	linear-gradient(to right,RGBA(255,218,68,0.5) 0%, RGBA(255,218,68,0.15) 25%, RGBA(255,218,68,0.1) 75%, RGBA(255,218,68, 0.5) 100%);
+	background: RGBA(255,218,68,.3);
 }

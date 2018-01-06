@@ -28,63 +28,52 @@ nav
 
 nav::before
 {
-	content: '';
-	display: block;
-	height: 46px;
-	width: 803px;
-	position: fixed;
-	left: 221px;
-	right: 0;
-	top: 0;
+	height: 48px;
 	margin: 0 auto;
-	z-index: -15;
 }
 
-nav > a
+nav > a:not(:first-of-type)
 {
 	padding: 15px 10px;
 }
 
-nav > div::before
-{
-	content: '';
-	position: fixed;
-	top: 0;
-	width: 221px;
-	height: 100%;
-	z-index: -100;
-}
-
-nav > div > a
+nav > a:first-of-type
 {
 	width: 121px;
-	height: 96px;
-	background-size: 121px 96px, 100%, 100%;
-	padding: 10px 50px;
+	height: 35px;
+	background-size: 61px 48px, 100%, 100%;
+	background-position: 50%;
+	padding: 13px 50px 0 50px;
+	vertical-align: top;
 }
-nav > div > :not(:first-child)
+
+aside
 {
+	position: fixed;
+	top: 80px;
+	width: 221px;
 	display: block;
 }
 
-nav > div > section
+aside > section
 {
 	padding: 10px;
 	width: 201px;
 }
 
-nav > div > section:not(:first-child)
+aside > section:not(:first-child)
 {
 	margin-top: 5px;
 }
 
-nav > div > section > h1
+aside > section > h1
 {
 	padding: 5px 0;
 	text-align: center;
+	font-size: 18px;
 }
 
-nav > div > section > p
+aside > section > p
 {
 	width: 181px !important;
 	text-indent: 1.25em;
@@ -95,7 +84,7 @@ nav > div > section > p
 }
 
 
-nav > div > section.contact > p
+aside > section.contact > p
 {
 	text-align:center;
 	text-indent: 0;
@@ -103,12 +92,12 @@ nav > div > section.contact > p
 	padding: 0;
 }
 
-nav > div > section.contact > p:nth-child(2n+1)
+aside > section.contact > p:nth-child(2n+1)
 {
 	text-indent: 0;
 }
 
-nav > div > section.contact > p:nth-child(2n+2)
+aside > section.contact > p:nth-child(2n+2)
 {
 	margin-top: 7px;
 	font-weight: bold;
@@ -118,10 +107,9 @@ nav > div > section.contact > p:nth-child(2n+2)
  */
 main
 {
-	margin-top: 75px;
-	text-align: center;
-	width: 803px;
-	margin-left: 221px;
+	width: 1024px;
+	box-sizing: border-box;
+	padding: 70px 3px 75px 224px;
 }
 
 main > h1
@@ -135,13 +123,12 @@ main > h1
 main > section
 {
 	margin-top: 30px;
-	width: inherit;
+	width: 100%;
 }
 
 main > section > h1
 {
 	display: block;
-	margin: 0 0 15px;
 }
 
 main > section > div
@@ -170,10 +157,4 @@ footer
 	margin: 0 auto;
 	background: white;
 	z-index: 4;
-}
-main::after
-{
-	content: '';
-	display: block;
-	margin-bottom: 80px;
 }
